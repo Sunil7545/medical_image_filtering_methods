@@ -77,7 +77,7 @@ def network_prediction(model, test_data):
 
 x_train, x_test, x_train_noisy, x_test_noisy = load_and_generate_noisy_data()
 auto_encoder_base = build_network()
-num_iterations = 1
+num_iterations = 100
 auto_encoder_base = train_network(auto_encoder_base, num_iterations, x_train_noisy, x_train, x_test_noisy, x_test)
 auto_encoder_base.save('basic_autoencoder_denoising.h5')
 network_prediction(auto_encoder_base, x_test_noisy)
